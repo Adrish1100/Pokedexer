@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Offside&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* --- Base --- */
+  --bg-app: hsl(220 35% 7%);
+  --bg-header: hsl(207 25% 28%);
+  --bg-sidebar: hsl(210 29% 16%);
+  --bg-card: hsl(210 19% 18%);
+  --bg-card-image: hsl(209 19% 35%);
+  --bg-input: hsl(209 32% 17%);
+  --border: hsl(205 17% 37%);
+  --border-light: hsl(210 13% 79% / 0.9);
+
+  /* --- Text --- */
+  --text-main: hsl(193 24% 93%);
+  --text-muted: hsl(213 13% 56%);
+  --text-accent: hsl(187 86% 58%);
+
+  /* --- Accent --- */
+  --cyan: hsl(185 89% 61%);
+  --cyan-hover: hsl(187 86% 68%);
+  --cyan-dim: hsl(198 67% 52%);
+
+  /* --- Type Badges --- */
+  --type-fire: hsl(27 96% 58%);
+  --type-water: hsl(212 90% 58%);
+  --type-electric: hsl(48 96% 58%);
+  --type-grass: hsl(142 54% 44%);
+  --type-psychic: hsl(88 48% 52%);
+  --type-ghost: hsl(266 42% 52%);
+  --type-poison: hsl(280 38% 42%);
+  --type-fighting: hsl(14 55% 38%);
+  --type-steel: hsl(210 8% 48%);
+  --type-flying: hsl(186 30% 44%);
+  --type-normal: hsl(210 6% 48%);
+  --type-dark: hsl(260 10% 25%);
+
+  /* Fonts */
+  --font-header-goldman: Goldman, Impact, "Arial Black", sans-serif;
+  --font-filters-oswald: Oswald, "Arial Narrow", Impact, sans-serif;
+  --font-cards-offside: Offside, "Segoe UI", cursive;
+  --font-body-poppins: Poppins, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-number: "Rajdhani", "JetBrains Mono", ui-monospace, monospace;
+}
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+}
+
+html{
+  overflow-x: clip;
+}
+
+body {
+    display:grid;
+    min-block-size:100dvb;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header"
+      "aside main"
+      "footer footer";
+      gap:0.5em;
+    background-color: var(--bg-app);
+    color:white;
+    margin:0;
+    padding:0;
+}
+
+header{
+    min-block-size:5svb;
+    grid-area:header;
+    background-color: var(--bg-header);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1em;
+    border-bottom:5px solid hsl(from var(--cyan) h s calc(l - 10));
+    border-radius:  0 0 10px 10px;
+    corner-shape:squircle;
+    padding-block:1em;
+    padding-inline:0 1em;
+}
+
+h1{
+    font-family:var(--font-header-goldman);
+    display:flex;
+    font-weight:500;
+    align-items:center;
+    gap: 0.3em;
+    margin: 0;
+    font-size:clamp(1rem, 4vw, 5rem);
+    background: linear-gradient(180deg,var(--cyan),var(--cyan-dim));
+    background-clip:text;
+    color:transparent;
+}
+.Hamburger-Menu-Button-open{
+    display:none;
+    @media(max-width:768px){
+        display:inline-flex;
+    }
+}
+
+aside.filters{
+    font-family:var(--font-filters-oswald);
+    font-size:2rem;
+    grid-area:aside;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+    padding-inline: 1rem;
+    inline-size:max-content;
+    display:flex;
+    flex-direction:column;
+    gap:2.5em;
+    align-items:flex-start;
+    border-right:5px solid hsl(from var(--cyan) h s calc(l - 10));
+    border-radius: 0 10px 10px 0;
+    corner-shape:squircle;
+}
+
+aside.filters section[aria-label="Filter-Buttons"] button{
+    background-color:var(--cyan);
+    border:none;
+    min-block-size:clamp(4em,10svb,10em);
+    min-inline-size:clamp(6em,10svb,12em);
+    border-radius: 50px;
+    corner-shape:squircle;
+}
+
+aside.filters section[aria-label="Filter-Buttons"] button:active{
+animation: button-animate 0.5s ease-out forwards;
+}
+
+aside.filters section[aria-label="Filter-Buttons"]{
+    display:flex;
+    column-gap:1em;
+    justify-content:center;
+    align-items:center;
+}
+
+section.overlay{
+    position:fixed;
+    inset:0;
+    z-index:3;
+    background-color:hsl(222 32% 5%/0.5);
+    backdrop-filter:blur(10px);
+    transform:translateX(-100%);
+    transition: transform 0.5s ease-in 0.25s;
+}
+
+section.overlay[open]{
+    transform:translateX(0);
+}
+
+svg.Hamburger-Menu-Button-close{
+    display:none;
+    position:absolute;
+    right:0.25rem;
+    top:0.25rem;
+    inline-size:20px;
+    block-size:20px;
+}
+
+aside.filters section{
+    border-bottom: 5px solid var(--cyan);
+    padding-block-end:2em;
+}
+
+aside.filters section:last-child{
+    border:none;
+}
+aside.filters h3{ 
+    margin: 1.5rem 0 0.5rem 0;
+    font-size:1.5em; 
+}
+aside.filters h2{ 
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2em;
+}
+
+main{
+    grid-area:main;
+    padding-inline: 1em;
+    font-size:1rem;
+}
+
+main h2{
+    padding:0;
+    height:fit-content;
+    width:fit-content;
+    align-content:center;
+    margin-block-end:0.5em;
+    font-size:clamp(1.25em,2.5vw,5em);
+}
+
+main h3.show-range{
+    transform:translateY(-100%);
+    margin:0;
+    color:lightgrey;
+    font-size:clamp(0.8em,1.5vw,3em);
+    margin-block-end:0;
+}
+
+main ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(180px, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main ul li{
+    font-family:var(--font-cards-offside);
+    display:grid;
+    grid-template-columns:1fr;
+    place-items:center;
+    background-color: var(--bg-card);
+    inline-size: 100%;
+    border-radius: 20px;
+    corner-shape:squircle;
+    line-height:1.6;
+    text-transform:capitalize;
+}
+
+main ul li img{
+    margin-block-start:1em;
+    background-color:var(--bg-card-image);
+    border:2px solid white;
+    border-radius: 10px;
+    corner-shape:squircle;
+    min-inline-size:70%;
+    max-inline-size:90%;
+}
+
+main ul li span.dex{
+    display:block;
+    text-align:start;
+    place-self:start;
+    border-radius: 5px;
+    corner-shape:squircle;
+    border-bottom:2px solid hsl(from white h s calc(l - 20));
+    border-right:2px solid hsl(from white h s calc(l - 10));
+    padding-inline:5px ;
+    
+}
+
+main ul li span.numbers{
+    font-family:var(--font-number);
+}
+footer{
+    border-top:5px solid hsl(from var(--cyan) h s calc(l - 10));
+    border-radius:  10px 0 0 10px;
+    corner-shape:squircle;
+    grid-area:footer;
+    background:
+    linear-gradient(180deg,hsl(from var(--cyan) h s calc(l - 15)),hsl(from var(--bg-header) h s calc(l - 15)));
+    color:var(--text-main);
+    padding: 1rem 1.5rem;
+}
+
+section.search-by-name{
+    display:flex;
+    align-items:center;
+    border:1px solid var(--border-light);
+    gap:0.25em;
+    padding-inline-end:0.5em;
+    border-radius: 10px 5px 5px 10px;
+    background: var(--bg-input);
+    overflow: hidden;
+}
+section.search-by-name input{
+    background: transparent;
+    border-right:2px solid white;
+    border-left: none;
+    border-bottom:none;
+    border-top:none;
+    color:var(--text-main);
+    padding: 0.6em 1em;
+}
+
+@keyframes button-animate{
+    0%{
+        scale:1;
+        transform:rotate(0deg);
+    }
+    10%{
+        scale:1.2;
+        transform:rotate(90deg);
+    }
+    50%{
+        scale:1.6;
+        transform:rotate(180deg);
+        background-color:var(--cyan-hover);
+    }
+    90%{
+        scale:2;
+        transform:rotate(330deg);
+    }
+    100%{
+        scale:1;
+        transform:rotate(360deg);
+        background-color:var(--cyan);
+    }
+}
+
+@media(min-width:768px){
+    header{
+       justify-content:space-around; 
+       min-block-size:2.5svb;
+    }
+    input{
+        min-inline-size 50%;
+    }
+}
+    
+/* MOBILE */
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+  .Hamburger-Menu-Button-open{
+      display:inline;
+  }
+  aside.filters{
+      transform:translateX(-100%);
+      z-index:3;
+      position:fixed;
+      top:0;
+      left:0;
+      font-size:0.8rem;
+      min-block-size:100svb;
+      transition: transform 0.75s ease-in-out 0.70s;
+  }
+  
+  aside.filters svg.Hamburger-Menu-Button-close{
+      display:block;
+  }
+  header {
+      gap: 1em;
+  }
+  section.search-by-name input{
+       inline-size: 160px; 
+  }
+}

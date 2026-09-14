@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>
+        <!-- Pokedex Logo Icon -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="44" height="44" aria-hidden="true">
+  <defs>
+    <linearGradient id="poke-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--cyan, #5ee9ff)" />
+      <stop offset="100%" stop-color="var(--cyan-dim, #2ab3c6)" />
+    </linearGradient>
+    <clipPath id="top-half">
+      <rect x="0" y="0" width="100" height="50" />
+    </clipPath>
+  </defs>
+    
+  <!-- White bottom half -->    
+  <circle cx="50" cy="50" r="48" fill="#FFFFFF" stroke="#000000" stroke-width="4" />
+      
+  <!-- Red top half using a clip path - NOW GRADIENT -->
+  <circle cx="50" cy="50" r="48" fill="url(#poke-grad)" stroke="#000000" stroke-width="4" clip-path="url(#top-half)" />
+
+  <!-- Central black horizontal dividing line -->
+  <line x1="2" y1="50" x2="98" y2="50" stroke="#000000" stroke-width="4" />
+
+  <!-- Outer button circle -->
+  <circle cx="50" cy="50" r="16" fill="#000000" />
+
+  <!-- Inner button circle (White button) -->
+  <circle cx="50" cy="50" r="10" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+</svg>
+    POKÉDEX
+    </h1>
+    <section aria-label="search pokemons by name" class="search-by-name">
+    <input type="text" autofocus id="pokemon-name" placeholder="Search by Name">
+    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--text-main)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="7"></circle>
+      <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+    </svg>
+    </section>
+    <svg role="button" tabindex="0" class="Hamburger-Menu-Button-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF" aria-label="Open Hamburger Menu" aria-controls="Hamburger-Menu-Panel" aria-expanded="false">
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+  </svg> 
+      </header>
+      
+    <section class="overlay" aria-hidden="true"></section>
+    
+<!-- The Filters Section -->
+<aside aria-label="Filters" class="filters">
+      <svg role="button" tabindex="0" class="Hamburger-Menu-Button-close" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: auto;" viewBox="0 0 24 24" fill="white" stroke="white" aria-label="Close Hamburger Menu" aria-controls="Hamburger-Menu-Panel">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    </svg>
+  <h2>
+    Filters
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+    </svg>
+  </h2>
+     
+<section>
+  <h3>Primary Typing</h3>
+  <label for="primary-type">Primary Type</label>
+  <select id="primary-type" name="primary-type">
+    <option value="">None</option>
+    <option value="normal">&#9679; Normal</option>
+    <option value="fire">&#128293; Fire</option>
+    <option value="water">&#128167; Water</option>
+    <option value="grass">&#127793; Grass</option>
+    <option value="electric">&#9889; Electric</option>
+    <option value="ice">&#10052; Ice</option>
+    <option value="fighting">&#9994; Fighting</option>
+    <option value="poison">&#9762; Poison</option>
+    <option value="ground">&#9968; Ground</option>
+    <option value="flying">&#9992; Flying</option>
+    <option value="psychic">&#10024; Psychic</option>
+    <option value="bug">&#128027; Bug</option>
+    <option value="rock">&#129704; Rock</option>
+    <option value="ghost">&#128123; Ghost</option>
+    <option value="dragon">&#128009; Dragon</option>
+    <option value="dark">&#127769; Dark</option>
+    <option value="steel">&#9881; Steel</option>
+    <option value="fairy">&#10022; Fairy</option>
+  </select>
+</section>
+
+<section>
+  <h3>Secondary Typing</h3>
+  <label for="secondary-type">Secondary Type</label>
+  <select id="secondary-type" name="secondary-type">
+    <option value="">None</option>
+    <option value="normal">&#9679; Normal</option>
+    <option value="fire">&#128293; Fire</option>
+    <option value="water">&#128167; Water</option>
+    <option value="grass">&#127793; Grass</option>
+    <option value="electric">&#9889; Electric</option>
+    <option value="ice">&#10052; Ice</option>
+    <option value="fighting">&#9994; Fighting</option>
+    <option value="poison">&#9762; Poison</option>
+    <option value="ground">&#9968; Ground</option>
+    <option value="flying">&#9992; Flying</option>
+    <option value="psychic">&#10024; Psychic</option>
+    <option value="bug">&#128027; Bug</option>
+    <option value="rock">&#129704; Rock</option>
+    <option value="ghost">&#128123; Ghost</option>
+    <option value="dragon">&#128009; Dragon</option>
+    <option value="dark">&#127769; Dark</option>
+    <option value="steel">&#9881; Steel</option>
+    <option value="fairy">&#10022; Fairy</option>
+  </select>
+</section>
+
+<section>
+  <h3>Generations</h3>
+  <label for="gen-select">Select Generation</label>
+  <select id="gen-select" class="gens" aria-label="All the Pokémon generations" name="generation">
+    <option value="">All Gens</option>
+    <option value="1" aria-label="Generation 1 (Kanto)" selected>Gen I (Kanto)</option>
+    <option value="2" aria-label="Generation 2 (Johto)">Gen II (Johto)</option>
+    <option value="3" aria-label="Generation 3 (Hoenn)">Gen III (Hoenn)</option>
+    <option value="4" aria-label="Generation 4 (Sinnoh)">Gen IV (Sinnoh)</option>
+    <option value="5" aria-label="Generation 5 (Unova)">Gen V (Unova)</option>
+    <option value="6" aria-label="Generation 6 (Kalos)">Gen VI (Kalos)</option>
+    <option value="7" aria-label="Generation 7 (Alola)">Gen VII (Alola)</option>
+    <option value="8" aria-label="Generation 8 (Galar)">Gen VIII (Galar)</option>
+    <option value="9" aria-label="Generation 9 (Paldea)">Gen IX (Paldea)</option>
+  </select>
+</section>
+    
+  <section aria-label="Filter-Buttons">
+      <button type="button" id="reset-button">
+  <svg aria-hiddem="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+    <polyline points="3 3 3 8 8 8" />
+  </svg>
+  <span>Reset</span>
+</button>
+    
+    <button id="apply-button">reload
+</button>
+  </section>
+  </aside>
+  <main>
+      <h2 id="number-of-pokemons">
+      Pokémon Found
+      </h2>
+      <ul id="pokemonList"></ul>
+      <button id="prev">&larr; Prev</button>
+      <button id="next">Next &rarr;</button>
+  </main>
+ <footer>
+  <p>Data from <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokéAPI</a></p>
+  
+  <p>Built by Adrish &amp; Shreyansh • Not affiliated with Nintendo / Game Freak</p>
+  <p>© 2026 Pokédex Project</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
