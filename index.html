@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Page title</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Primary SEO -->
+<title>PokeRegistry - Search & Filter Any Pokemon</title>
+<meta name="description" content="Search any Pokemon instantly like Google. Find Pikachu, Charizard and 1000+ Pokemon. Filter by Fire, Water, Grass, Electric types. Fast and clean Pokedex.">
+<meta name="keywords" content="pokemon, pokedex, pokewatch, pokemon search, pokemon list, fire type, water type">
+<meta name="author" content="PokeWatch Team">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FFCB05">
+<link rel="canonical" href="https://pokeregistry.vercel.app/" />
+
+<!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PokeWatch">
+<meta property="og:title" content="PokeWatch - Search Any Pokemon Instantly">
+<meta property="og:description" content="A fast Pokedex to search and filter 1000+ Pokemon by name and type.">
+<meta property="og:url" content="https://yourpokewatch.com/">
+<meta property="og:image" content="https://yourpokewatch.com/og-logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PokeWatch - Search Any Pokemon Instantly">
+<meta name="twitter:description" content="Search Pikachu, Charizard and filter by Fire, Water, Grass types.">
+<meta name="twitter:image" content="https://yourpokewatch.com/og-logo.png">
+<meta name="twitter:creator" content="@pokewatch">
+
+<!-- Icons - This will show Pokemon logo -->
+<link rel="icon" type="image/png" href="/pokemon-logo.png">
+<link rel="apple-touch-icon" href="/pokemon-logo.png">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>
-        <!-- Pokedex Logo Icon -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="44" height="44" aria-hidden="true">
-  <defs>
-    <linearGradient id="poke-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="var(--cyan, #5ee9ff)" />
-      <stop offset="100%" stop-color="var(--cyan-dim, #2ab3c6)" />
-    </linearGradient>
-    <clipPath id="top-half">
-      <rect x="0" y="0" width="100" height="50" />
-    </clipPath>
-  </defs>
-    
-  <!-- White bottom half -->    
-  <circle cx="50" cy="50" r="48" fill="#FFFFFF" stroke="#000000" stroke-width="4" />
-      
-  <!-- Red top half using a clip path - NOW GRADIENT -->
-  <circle cx="50" cy="50" r="48" fill="url(#poke-grad)" stroke="#000000" stroke-width="4" clip-path="url(#top-half)" />
 
-  <!-- Central black horizontal dividing line -->
-  <line x1="2" y1="50" x2="98" y2="50" stroke="#000000" stroke-width="4" />
-
-  <!-- Outer button circle -->
-  <circle cx="50" cy="50" r="16" fill="#000000" />
-
-  <!-- Inner button circle (White button) -->
-  <circle cx="50" cy="50" r="10" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
-</svg>
-    POKÉDEX
+    POKÉREGISTRY
     </h1>
     <section aria-label="search pokemons by name" class="search-by-name">
     <input type="text" autofocus id="pokemon-name" placeholder="Search by Name">
@@ -44,7 +46,7 @@
       <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
     </svg>
     </section>
-    <svg role="button" tabindex="0" class="Hamburger-Menu-Button-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF" aria-label="Open Hamburger Menu" aria-controls="Hamburger-Menu-Panel" aria-expanded="false">
+    <svg role="button" tabindex="0" class="Hamburger-Menu-Button-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="var(--menu-buttons)" aria-label="Open Hamburger Menu" aria-controls="Hamburger-Menu-Panel" aria-expanded="false">
     <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
   </svg> 
       </header>
@@ -53,7 +55,7 @@
     
 <!-- The Filters Section -->
 <aside aria-label="Filters" class="filters">
-      <svg role="button" tabindex="0" class="Hamburger-Menu-Button-close" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: auto;" viewBox="0 0 24 24" fill="white" stroke="white" aria-label="Close Hamburger Menu" aria-controls="Hamburger-Menu-Panel">
+      <svg role="button" tabindex="0" class="Hamburger-Menu-Button-close" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: auto;" viewBox="0 0 24 24" fill="var(--menu-buttons)" stroke="white" aria-label="Close Hamburger Menu" aria-controls="Hamburger-Menu-Panel">
       <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
     </svg>
   <h2>
@@ -134,16 +136,16 @@
     
   <section aria-label="Filter-Buttons">
       <button type="button" id="reset-button">
-  <svg aria-hiddem="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-    <polyline points="3 3 3 8 8 8" />
-  </svg>
-  <span>Reset</span>
+        <span style="font-weight:bold;">&orarr;</span> Reset
 </button>
     
     <button id="apply-button">reload
 </button>
   </section>
+  
+  <button aria-label="Light/Dark Mode toggle" id="toggle">
+      <div class="circle"></div>
+  </button>
   </aside>
   <main>
       <h2 id="number-of-pokemons">

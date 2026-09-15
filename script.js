@@ -12,6 +12,7 @@ const menuOpen = document.querySelector('.Hamburger-Menu-Button-open');
 const menuClose = document.querySelector('.Hamburger-Menu-Button-close');
 const menu = document.querySelector('.filters');
 const overlay = document.querySelector('.overlay');
+const toggle = document.querySelector('#toggle')
 const width = window.innerWidth
 const height = window.innerHeight
 const limit = Math.floor(Math.floor(width / 180)*1.3)
@@ -82,10 +83,13 @@ ul.innerHTML = '';
    poke.stats.forEach(s => {
   stats[s.stat.name] = s.base_stat
 })
-            li.innerHTML = `<img src="${poke.sprites.front_default}">
-    <p>#${poke.id.toString().padStart(3, '0')} - ${poke.name}<br>
-    Height:${poke.height * 10}cm Weight:${poke.weight / 10}kg<br>
-    Atk:${stats.attack} Def:${stats.defense} Speed:${stats.speed}</p>`;
+            li.innerHTML = `
+    <span class="dex numbers">#${String(poke.id).padStart(3,'0')}</span>
+    <img src="${poke.sprites.front_default}" alt="">
+    <h3 class="pokename">${poke.name}</h3>
+    <p>Height: <span class="numbers">${poke.height*10}</span>cm | Weight: <span class="numbers">${poke.weight/10}</span>kg</p>
+    <p>Atk: <span class="numbers">${stats.attack}</span> Def: <span class="numbers">${stats.defense}</span> Spd: <span class="numbers">${stats.speed}</span></p>
+  `;
     li.classList.add('listitem');
     ul.appendChild(li);
     no.innerHTML = `<p><h2>1 Pokémon Found</h2><br><h3>Showing 0-1 Pokèmon Out Of 1</h3></p>`
@@ -147,9 +151,13 @@ ul.innerHTML = '';
 })
     li.innerHTML = `
     <span class="dex numbers">#${String(poke.id).padStart(3,'0')}</span>
-    <img src="${poke.sprites.front_default}" alt="">
+    <img src="${poke.sprites.front_default}" alt="${poke.name}">
     <h3 class="pokename">${poke.name}</h3>
-    <p>Height: <span class="numbers">${poke.height*10}</span>cm | Weight: <span class="numbers">${poke.weight/10}</span>kg</p>
+    <p>
+       Height: <span class="numbers">${poke.height*10}</span>cm
+        <br>
+       Weight: <span class="numbers">${poke.weight/10}</span>kg
+    </p>
     <p>Atk: <span class="numbers">${stats.attack}</span> Def: <span class="numbers">${stats.defense}</span> Spd: <span class="numbers">${stats.speed}</span></p>
   `;
     li.classList.add('listitem');
@@ -160,3 +168,8 @@ ul.innerHTML = '';
        console.log(err)
 };
 }
+
+toggle.addEventListener("click", () => {
+    toggle.classList.toggle('white');
+    document.body.classList.toggle('light-mode');
+});
