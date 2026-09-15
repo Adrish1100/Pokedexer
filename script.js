@@ -77,6 +77,7 @@ document.addEventListener('click', (e) => {
       Select2.value = ""
       offset = 0
       search.value = ""
+    }
 });
 
 async function loadTypes(gen, type, type2, offset, limit, search) {
