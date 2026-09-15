@@ -72,11 +72,12 @@ document.addEventListener('click', (e) => {
         loadTypes(Gen.value, Select.value, Select2.value, offset, limit, search.value)
     }
     if (e.target == reset) {
-      Gen.value = "1"
+      Gen.value = ""
       Select.value = ""
       Select2.value = ""
       offset = 0
       search.value = ""
+      loadTypes(Gen.value, Select.value, Select2.value, offset, limit, search.value)
     }
 });
 
