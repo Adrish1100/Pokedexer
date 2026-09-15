@@ -6,6 +6,7 @@ const next = document.querySelector('#next');
 const no = document.querySelector('#number-of-pokemons')
 const Gen = document.querySelector("#gen-select")
 const reload = document.querySelector("#apply-button")
+const reset = document.querySelector('#reset-button')
 const search = document.querySelector("#pokemon-name")
 let offset = 0;
 const menuOpen = document.querySelector('.Hamburger-Menu-Button-open');
@@ -70,6 +71,12 @@ document.addEventListener('click', (e) => {
     if (e.target == reload) {
         loadTypes(Gen.value, Select.value, Select2.value, offset, limit, search.value)
     }
+    if (e.target == reset) {
+      Gen.value = "1"
+      Select.value = ""
+      Select2.value = ""
+      offset = 0
+      search.value = ""
 });
 
 async function loadTypes(gen, type, type2, offset, limit, search) {
