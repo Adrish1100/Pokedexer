@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Primary SEO -->
-<title>PokeRegistry - Search & Filter Any Pokemon</title>
-<meta name="description" content="Search any Pokemon instantly like Google. Find Pikachu, Charizard and 1000+ Pokemon. Filter by Fire, Water, Grass, Electric types. Fast and clean Pokedex.">
-<meta name="keywords" content="pokemon, pokedex, pokewatch, pokemon search, pokemon list, fire type, water type">
-<meta name="author" content="PokeWatch Team">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#FFCB05">
-<link rel="canonical" href="https://pokeregistry.vercel.app/" />
+    <head>
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="./Favicon.jpg">
+<link rel="apple-touch-icon" href="./Favicon.jpg">
 
-<!-- Open Graph / WhatsApp / Facebook -->
+<!-- Basic SEO -->
+<title>PokéRegistry - Search Any Pokemon Instantly</title>
+<meta name="description" content="A fast Pokedex to search and filter 1000+ Pokemon by name and type.">
+
+<!-- Open Graph / Facebook / WhatsApp / Discord -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="PokeWatch">
-<meta property="og:title" content="PokeWatch - Search Any Pokemon Instantly">
-<meta property="og:description" content="A fast Pokedex to search and filter 1000+ Pokemon by name and type.">
-<meta property="og:url" content="https://yourpokewatch.com/">
-<meta property="og:image" content="https://yourpokewatch.com/og-logo.png">
+<meta property="og:site_name" content="PokéRegistry">
+<meta property="og:title" content="PokéRegistry - Search Any Pokemon Instantly">
+<meta property="og:description" content="A fast Pokedex to search and filter 1000+ Pokemon by name and type. Search Pikachu, Charizard and filter by Fire, Water, Grass types.">
+<meta property="og:url" content="./index.html">
+
+<!-- Main OG image (1200x630) -->
+<meta property="og:image" content="./OG-img.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
+<!-- WhatsApp square image (1:1) - WhatsApp will pick this one -->
+<meta property="og:image" content="./OG-whatsapp.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PokeWatch - Search Any Pokemon Instantly">
+<meta name="twitter:title" content="PokéRegistry - Search Any Pokemon Instantly">
 <meta name="twitter:description" content="Search Pikachu, Charizard and filter by Fire, Water, Grass types.">
-<meta name="twitter:image" content="https://yourpokewatch.com/og-logo.png">
-<meta name="twitter:creator" content="@pokewatch">
+<meta name="twitter:image" content="./OG-img.jpg">
+<meta name="twitter:creator" content="@pokeregistry">
 
-<!-- Icons - This will show Pokemon logo -->
-<link rel="icon" type="image/png" href="/pokemon-logo.png">
-<link rel="apple-touch-icon" href="/pokemon-logo.png">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="">
     <header>
         <h1>
 
     POKÉREGISTRY
     </h1>
     <section aria-label="search pokemons by name" class="search-by-name">
-    <input type="text" autofocus id="pokemon-name" placeholder="Search by Name">
+    <input type="text" autofocus="" id="pokemon-name" placeholder="Search by Name">
     <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--text-main)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="11" cy="11" r="7"></circle>
       <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
     </svg>
     </section>
     <svg role="button" tabindex="0" class="Hamburger-Menu-Button-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="var(--menu-buttons)" aria-label="Open Hamburger Menu" aria-controls="Hamburger-Menu-Panel" aria-expanded="false">
-    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
   </svg> 
       </header>
       
@@ -55,13 +59,13 @@
     
 <!-- The Filters Section -->
 <aside aria-label="Filters" class="filters">
-      <svg role="button" tabindex="0" class="Hamburger-Menu-Button-close" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: auto;" viewBox="0 0 24 24" fill="var(--menu-buttons)" stroke="white" aria-label="Close Hamburger Menu" aria-controls="Hamburger-Menu-Panel">
-      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+      <svg role="button" tabindex="0" class="Hamburger-Menu-Button-close" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: auto;" viewBox="0 0 24 24" fill="var(--menu-buttons)" stroke="var(--menu-buttons)" aria-label="Close Hamburger Menu" aria-controls="Hamburger-Menu-Panel">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
     </svg>
   <h2>
     Filters
     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
-      <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+      <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"></path>
     </svg>
   </h2>
      
@@ -69,52 +73,58 @@
   <h3>Primary Typing</h3>
   <label for="primary-type">Primary Type</label>
   <select id="primary-type" name="primary-type">
-    <option value="">None</option>
-    <option value="normal">&#9679; Normal</option>
-    <option value="fire">&#128293; Fire</option>
-    <option value="water">&#128167; Water</option>
-    <option value="grass">&#127793; Grass</option>
-    <option value="electric">&#9889; Electric</option>
-    <option value="ice">&#10052; Ice</option>
-    <option value="fighting">&#9994; Fighting</option>
-    <option value="poison">&#9762; Poison</option>
-    <option value="ground">&#9968; Ground</option>
-    <option value="flying">&#9992; Flying</option>
-    <option value="psychic">&#10024; Psychic</option>
-    <option value="bug">&#128027; Bug</option>
-    <option value="rock">&#129704; Rock</option>
-    <option value="ghost">&#128123; Ghost</option>
-    <option value="dragon">&#128009; Dragon</option>
-    <option value="dark">&#127769; Dark</option>
-    <option value="steel">&#9881; Steel</option>
-    <option value="fairy">&#10022; Fairy</option>
-  </select>
+  <button>
+    <selectedcontent></selectedcontent>
+  </button>
+  <option value="">None</option>
+  <option value="normal" style="--clr:var(--type-normal)"><span aria-hidden="true">●</span> Normal</option>
+  <option value="fire" style="--clr:orangered"><span aria-hidden="true">🔥</span> Fire</option>
+  <option value="water" style="--clr:dodgerblue"><span aria-hidden="true">💧</span> Water</option>
+  <option value="grass" style="--clr:green"><span aria-hidden="true">🌱</span> Grass</option>
+  <option value="electric" style="--clr:gold"><span aria-hidden="true">⚡</span> Electric</option>
+  <option value="ice" style="--clr:aquamarine"><span aria-hidden="true">❄</span> Ice</option>
+  <option value="fighting" style="--clr:sienna"><span aria-hidden="true">✊</span> Fighting</option>
+  <option value="poison" style="--clr:purple"><span aria-hidden="true">☢</span> Poison</option>
+  <option value="ground" style="--clr:khaki"><span aria-hidden="true">⛰</span> Ground</option>
+  <option value="flying" style="--clr:skyblue"><span aria-hidden="true">✈</span> Flying</option>
+  <option value="psychic" style="--clr:rebeccapurple"><span aria-hidden="true">✨</span> Psychic</option>
+  <option value="bug" style="--clr:yellowgreen"><span aria-hidden="true">🐛</span> Bug</option>
+  <option value="rock" style="--clr:darkkhaki"><span aria-hidden="true">🪨</span> Rock</option>
+  <option value="ghost" style="--clr:slateblue"><span aria-hidden="true">👻</span> Ghost</option>
+  <option value="dragon" style="--clr:indigo"><span aria-hidden="true">🐉</span> Dragon</option>
+  <option value="dark" style="--clr:darkslategray"><span aria-hidden="true">🌙</span> Dark</option>
+  <option value="steel" style="--clr:slategray"><span aria-hidden="true">⚙</span> Steel</option>
+  <option value="fairy" style="--clr:hotpink"><span aria-hidden="true">✦</span> Fairy</option>
+</select>
 </section>
 
 <section>
   <h3>Secondary Typing</h3>
   <label for="secondary-type">Secondary Type</label>
-  <select id="secondary-type" name="secondary-type">
-    <option value="">None</option>
-    <option value="normal">&#9679; Normal</option>
-    <option value="fire">&#128293; Fire</option>
-    <option value="water">&#128167; Water</option>
-    <option value="grass">&#127793; Grass</option>
-    <option value="electric">&#9889; Electric</option>
-    <option value="ice">&#10052; Ice</option>
-    <option value="fighting">&#9994; Fighting</option>
-    <option value="poison">&#9762; Poison</option>
-    <option value="ground">&#9968; Ground</option>
-    <option value="flying">&#9992; Flying</option>
-    <option value="psychic">&#10024; Psychic</option>
-    <option value="bug">&#128027; Bug</option>
-    <option value="rock">&#129704; Rock</option>
-    <option value="ghost">&#128123; Ghost</option>
-    <option value="dragon">&#128009; Dragon</option>
-    <option value="dark">&#127769; Dark</option>
-    <option value="steel">&#9881; Steel</option>
-    <option value="fairy">&#10022; Fairy</option>
-  </select>
+  <select id="secondary-type" name="primary-type">
+  <button>
+    <selectedcontent></selectedcontent>
+  </button>
+  <option value="">None</option>
+  <option value="normal" style="--clr:var(--type-normal)"><span aria-hidden="true">●</span> Normal</option>
+  <option value="fire" style="--clr:orangered"><span aria-hidden="true">🔥</span> Fire</option>
+  <option value="water" style="--clr:dodgerblue"><span aria-hidden="true">💧</span> Water</option>
+  <option value="grass" style="--clr:green"><span aria-hidden="true">🌱</span> Grass</option>
+  <option value="electric" style="--clr:gold"><span aria-hidden="true">⚡</span> Electric</option>
+  <option value="ice" style="--clr:aquamarine"><span aria-hidden="true">❄</span> Ice</option>
+  <option value="fighting" style="--clr:sienna"><span aria-hidden="true">✊</span> Fighting</option>
+  <option value="poison" style="--clr:purple"><span aria-hidden="true">☢</span> Poison</option>
+  <option value="ground" style="--clr:khaki"><span aria-hidden="true">⛰</span> Ground</option>
+  <option value="flying" style="--clr:skyblue"><span aria-hidden="true">✈</span> Flying</option>
+  <option value="psychic" style="--clr:rebeccapurple"><span aria-hidden="true">✨</span> Psychic</option>
+  <option value="bug" style="--clr:yellowgreen"><span aria-hidden="true">🐛</span> Bug</option>
+  <option value="rock" style="--clr:darkkhaki"><span aria-hidden="true">🪨</span> Rock</option>
+  <option value="ghost" style="--clr:slateblue"><span aria-hidden="true">👻</span> Ghost</option>
+  <option value="dragon" style="--clr:indigo"><span aria-hidden="true">🐉</span> Dragon</option>
+  <option value="dark" style="--clr:darkslategray"><span aria-hidden="true">🌙</span> Dark</option>
+  <option value="steel" style="--clr:slategray"><span aria-hidden="true">⚙</span> Steel</option>
+  <option value="fairy" style="--clr:hotpink"><span aria-hidden="true">✦</span> Fairy</option>
+</select>
 </section>
 
 <section>
@@ -122,7 +132,7 @@
   <label for="gen-select">Select Generation</label>
   <select id="gen-select" class="gens" aria-label="All the Pokémon generations" name="generation">
     <option value="">All Gens</option>
-    <option value="1" aria-label="Generation 1 (Kanto)" selected>Gen I (Kanto)</option>
+    <option value="1" aria-label="Generation 1 (Kanto)" selected="">Gen I (Kanto)</option>
     <option value="2" aria-label="Generation 2 (Johto)">Gen II (Johto)</option>
     <option value="3" aria-label="Generation 3 (Hoenn)">Gen III (Hoenn)</option>
     <option value="4" aria-label="Generation 4 (Sinnoh)">Gen IV (Sinnoh)</option>
@@ -136,31 +146,42 @@
     
   <section aria-label="Filter-Buttons">
       <button type="button" id="reset-button">
-        <span style="font-weight:bold;">&orarr;</span> Reset
+        <span style="font-weight:bold;">↻</span> Reset
 </button>
     
     <button id="apply-button">reload
 </button>
   </section>
-  
-  <button aria-label="Light/Dark Mode toggle" id="toggle">
+ 
+  <section class="light-dark-toggle-section">
+      <h4>Light/Dark Mode</h4>
+      <button aria-label="Light/Dark Mode toggle" id="toggle">
       <div class="circle"></div>
   </button>
+  </section>
+   <p class="blue">&#9889; Fast • Interactive • Real Time</p>
   </aside>
-  <main>
+  
+   <main>
       <h2 id="number-of-pokemons">
-      Pokémon Found
+      Welcome To PokéRegistry!
       </h2>
       <ul id="pokemonList"></ul>
-      <button id="prev">&larr; Prev</button>
-      <button id="next">Next &rarr;</button>
+      
+      <section aria-label="Pokémon navigation" class="pokenav">
+         <button id="prev" aria-label="Previous Pokémon">←</button>
+         <button id="next" aria-label="Next Pokémon">→</button>
+       </section>
   </main>
+  
  <footer>
   <p>Data from <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokéAPI</a></p>
   
   <p>Built by Adrish &amp; Shreyansh • Not affiliated with Nintendo / Game Freak</p>
   <p>© 2026 Pokédex Project</p>
 </footer>
+
 <script src="script.js"></script>
+
 </body>
 </html>
